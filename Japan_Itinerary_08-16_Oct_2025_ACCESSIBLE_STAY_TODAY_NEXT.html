@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan Trip – Accessible Itinerary (Stay-first + Today + Next Up)</title>
+<style>
+:root{ --bg:#ffffff; --fg:#111; --muted:#555; --accent:#2F3C7E; --line:#d7dce3; --chip:#f6f7fb; --hc-bg:#ffffff; --hc-fg:#000000; --hc-line:#000; }
+@media(prefers-color-scheme:dark){
+  :root{ --bg:#0b0c0f; --fg:#ececec; --muted:#b8b8b8; --accent:#8ea1ff; --line:#2a3240; --chip:#161a22; --hc-bg:#000; --hc-fg:#fff; --hc-line:#fff; }
+}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:20px/1.65 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+body.hc{background:var(--hc-bg);color:var(--hc-fg);}
+.container{max-width:800px;margin:0 auto;padding:18px;}
+h1{font-size:1.9rem;line-height:1.25;margin:8px 0 4px 0;}
+.sub{color:var(--muted);font-size:1.05rem;margin-bottom:14px;}
+h2{font-size:1.45rem;margin:18px 0 8px 0;padding-top:8px;border-top:2px solid var(--line);}
+h3{font-size:1.2rem;margin:12px 0 6px 0;color:var(--accent);}
+.section{margin:14px 0 20px 0;}
+.card{background:var(--chip);border:1px solid var(--line);border-radius:16px;padding:14px;}
+body.hc .card, body.hc .travelcard{background:var(--hc-bg);border-color:var(--hc-line);}
+a{color:var(--accent);text-decoration:none;}
+.nav{position:sticky;top:0;background:var(--bg);padding:8px 0 10px 0;border-bottom:1px solid var(--line);z-index:10;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.nav a{padding:6px 10px;border:1px solid var(--line);border-radius:999px;}
+.nav button{padding:6px 12px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:999px;}
+.day{scroll-margin-top:90px;}
+/* Next Up panel */
+.nextup{margin-top:12px;padding:12px;border:2px solid var(--line);border-radius:14px;background:var(--chip);}
+.nextup h3{margin:0 0 6px 0;}
+.nextup .time{font-weight:700;}
+/* Travel cards */
+.travelwrap{display:flex;flex-direction:column;gap:10px;}
+.travelcard{border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--bg);}
+.row{display:grid;grid-template-columns: 1fr;gap:6px;margin:6px 0;}
+@media(min-width:520px){ .row{grid-template-columns: 1fr 1fr;} }
+.k{font-weight:600;color:var(--muted);}
+.v{}
+.badges{font-size:1rem;margin-bottom:4px;}
+.mode{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 8px;background:var(--chip);}
+.controls{position:fixed;right:14px;bottom:18px;display:flex;gap:10px;z-index:20;}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:10px 14px;font-size:1.05rem;}
+.smallbtn{background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:8px 12px;font-size:1.05rem;}
+ul{margin:8px 0 8px 22px;}
+strong{font-weight:700;}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+</style></head><body>
+<div class="container">
+  <div class="nav">
+    <button id="navToday" title="Jump to today">Today</button>
+    <button id="contrast" title="High contrast on/off">High contrast</button>
+    <a href="#oct8">8 Oct</a><a href="#oct9">9 Oct</a><a href="#oct10">10 Oct</a><a href="#oct11">11 Oct</a><a href="#oct12">12 Oct</a><a href="#oct13">13 Oct</a><a href="#oct14">14 Oct</a><a href="#oct15">15 Oct</a><a href="#oct16">16 Oct</a>
+  </div>
+
+  <div class="nextup" id="nextup">
+    <!-- JS will render the next upcoming item based on Tokyo time -->
+  </div>
+
+  <h1>Japan Trip — Accessible Itinerary</h1>
+  <div class="sub">Stay‑first overviews, stacked travel cards, larger text. Top bar has <strong>Today</strong>, <strong>High contrast</strong>, and quick date jumps.</div>
+
+  <section id="scope" class="section card">
+    <h3>How this reads</h3>
+    <p>Overviews begin with stay length and key notes. The “Next up” panel shows the nearest upcoming item and a jump link.</p>
+    <p><button class="smallbtn" id="incFont">A+</button> <button class="smallbtn" id="decFont">A−</button></p>
+  </section>
+
+  <section id="oct8" class="section day">
+    <h2>Wed 8 Oct — Matsumoto → Takayama</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: 2 nights in Takayama (8–9 Oct) — Hotel Associa Takayama Resort.</strong> Breakfast included; free station shuttle. Travel from alpine Matsumoto and settle into Edo‑period streets and sake breweries.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚌 Bus</span> &nbsp; <strong>Ticket 9</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Matsumoto Station → Takayama Nohi Bus Center</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Nohi Bus</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">11:55 → 14:28</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Valid for 2 people. Keep until destination.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Old town lanes, Takayama Jinya, local sake tastings.</p>
+    <h3>Key information</h3>
+    <ul><li><strong>Hotel:</strong> Hotel Associa Takayama Resort — <span class="iconlinks"><a href="https://www.associa.com/tky/multi-lingual/?wovn=en">Website</a> · <a href="https://maps.apple.com/?q=Hotel%20Associa%20Takayama%20Resort">Apple Maps</a> · <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Associa+Takayama+Resort">Google Maps</a> · <a href="tel:+81577360001">Call</a></span></li><li>Free shuttle from Takayama Station. Check‑in 15:00; check‑out 12:00.</li><li>Some public baths may refuse guests with tattoos.</li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Nohi Bus (Takayama ⇄ Shirakawa‑go): <a href="https://www.nouhibus.co.jp/route_bus/takayama-shirakawago-line-en/">official route/times</a></li></ul>
+    </details>
+  </section>
+
+  <section id="oct9" class="section day">
+    <h2>Thu 9 Oct — Takayama (free day)</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: Takayama — night 2 of 2.</strong> Breakfast included. A relaxed day for markets and the preserved old town; Hida Folk Village is an easy add‑on.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap"><p>No intercity travel today.</p></div>
+    <h3>Activities</h3>
+    <p>Morning markets (Miyagawa / Jinya‑mae), preserved streets, optional Hida Folk Village.</p>
+    <h3>Key information</h3>
+    <ul><li>Base: Hotel Associa Takayama Resort — <span class="iconlinks"><a href="https://www.associa.com/tky/multi-lingual/?wovn=en">Website</a> · <a href="https://maps.apple.com/?q=Hotel%20Associa%20Takayama%20Resort">Apple Maps</a> · <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Associa+Takayama+Resort">Google Maps</a> · <a href="tel:+81577360001">Call</a></span></li><li>Breakfast included.</li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Local bus info hub: <a href='https://www.nouhibus.co.jp/english/'>Nohi Bus (English)</a></li></ul>
+    </details>
+  </section>
+
+  <section id="oct10" class="section day">
+    <h2>Fri 10 Oct — Takayama → Shirakawa‑go → Kanazawa</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: 1 night in Kanazawa (10 Oct) — Hotel Vista Kanazawa.</strong> ≈6‑min walk from the station (West). Bus via Shirakawa‑go’s gasshō farmhouses; consider the 21st Century Museum later.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚌 Bus</span> &nbsp; <strong>Ticket 10</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Takayama Nohi Bus Center → Shirakawa‑go</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Nohi Bus</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">09:35 → 10:25</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Non‑reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Depart from Nohi Bus Centre.</div></div>
+    </div>
+    
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚌 Bus</span> &nbsp; <strong>Ticket 11</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Shirakawa‑go → Kanazawa Station</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Nohi / Hokutetsu</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">13:50 → 15:05</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Keep ticket until destination.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Explore Shirakawa‑go then continue to Kanazawa; optional 21st Century Museum.</p>
+    <h3>Key information</h3>
+    <ul><li><strong>Hotel:</strong> Hotel Vista Kanazawa — <span class="iconlinks"><a href="https://kanazawa.hotel-vista.jp/en/">Website</a> · <a href="https://maps.apple.com/?q=Hotel%20Vista%20Kanazawa">Apple Maps</a> · <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Vista+Kanazawa">Google Maps</a> · <a href="tel:+81762600007">Call</a></span></li><li>≈6 min walk from Kanazawa Station (West exit). Breakfast included.</li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Nohi Bus Kanazawa line (official): <a href='https://www.nouhibus.co.jp/highwaybus/kanazawa_en/'>route & info</a></li></ul>
+    </details>
+  </section>
+
+  <section id="oct11" class="section day">
+    <h2>Sat 11 Oct — Kanazawa → Hiroshima (via Tsuruga & Kyoto)</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: 2 nights in Hiroshima (11–12 Oct) — RIHGA Royal Hotel Hiroshima.</strong> Tram Lines 1/2/6 → Kamiyacho‑Nishi. Multi‑leg rail day via Tsuruga & Kyoto; Shinkansen luggage rules apply for large cases.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🎫 JR Fare</span> &nbsp; <strong>Ticket 12</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Kanazawa → Hiroshima</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Base fare</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Carry with you to final destination.</div></div>
+    </div>
+    
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚄 Shinkansen</span> &nbsp; <strong>Ticket 13</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Kanazawa → Tsuruga</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Kagayaki #507</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">11:54 → 12:43</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Use with ticket 12.</div></div>
+    </div>
+    
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚆 Ltd. Express</span> &nbsp; <strong>Ticket 13</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Tsuruga → Kyoto</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Thunderbird #22</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">13:14 → 14:09</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Use with ticket 12.</div></div>
+    </div>
+    
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚄 Shinkansen</span> &nbsp; <strong>Ticket 14</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Kyoto → Hiroshima</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Nozomi #33</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">14:46 → 16:27</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Use with ticket 12.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Evening at leisure in Hiroshima.</p>
+    <h3>Key information</h3>
+    <ul><li><strong>Hotel:</strong> RIHGA Royal Hotel Hiroshima — <span class="iconlinks"><a href="https://www.rihga.com/hiroshima">Website</a> · <a href="https://maps.apple.com/?q=RIHGA%20Royal%20Hotel%20Hiroshima">Apple Maps</a> · <a href="https://www.google.com/maps/search/?api=1&query=RIHGA+Royal+Hotel+Hiroshima">Google Maps</a></span></li><li>Tram Lines 1/2/6 to Kamiyacho‑Nishi, short walk to hotel.</li><li>Breakfast included.</li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Shinkansen oversized baggage rules (official): <a href='https://global.jr-central.co.jp/en/info/oversized-baggage/'>JR info</a></li></ul>
+    </details>
+  </section>
+
+  <section id="oct12" class="section day">
+    <h2>Sun 12 Oct — Hiroshima ⇄ Miyajima</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: Hiroshima — night 2 of 2.</strong> Use the Hiroden 1‑day pass (trams + Matsudai ferry; not JR). Peace Park & Museum, then Miyajima’s Itsukushima Shrine.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚆 JR</span> &nbsp; <strong>Ticket 15</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Hiroshima → Miyajimaguchi</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">JR Sanyo Line</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">≈30 min</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Keep ticket until destination.</div></div>
+    </div>
+    
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚋⛴ Pass</span> &nbsp; <strong>Ticket 16</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Hiroshima trams + Miyajima ferry</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Hiroden 1‑Day Streetcar & Ferry Pass</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">All day</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Unlimited Hiroden trams & Matsudai ferry (not JR ferry).</div></div>
+    </div>
+    
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚆 JR</span> &nbsp; <strong>Ticket 17</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Miyajimaguchi → Hiroshima</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">JR Sanyo Line</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">≈30 min</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Keep ticket until destination.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Peace Memorial Park & Museum, then ferry to Miyajima for Itsukushima Shrine and the ‘floating’ torii.</p>
+    <h3>Key information</h3>
+    <ul><li>Pass details & price: <a href="https://www.hiroden.co.jp/en/e-1day.html">Hiroden official</a></li><li>Itsukushima Shrine: <a href="https://www.itsukushimajinja.jp/en/">official</a> • <a href="https://whc.unesco.org/en/list/776/">UNESCO</a></li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Hiroshima Peace Memorial Museum: <a href='https://hpmmuseum.jp/?lang=en'>official site</a></li></ul>
+    </details>
+  </section>
+
+  <section id="oct13" class="section day">
+    <h2>Mon 13 Oct — Hiroshima → Kyoto</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: 3 nights in Kyoto (13–15 Oct) — Hotel Gracery Kyoto Sanjo.</strong> Breakfast included. Shinkansen east to Kyoto; ease into markets, townhouses and riverside lanes.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚄 Shinkansen</span> &nbsp; <strong>Ticket 18</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Hiroshima → Kyoto</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Nozomi #90</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">10:03 → 11:43</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Keep ticket until destination.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Afternoon at leisure in Kyoto.</p>
+    <h3>Key information</h3>
+    <ul><li><strong>Hotel:</strong> Hotel Gracery Kyoto Sanjo — <span class="iconlinks"><a href="https://kyoto.gracery.com/">Website</a> · <a href="https://maps.apple.com/?q=Hotel%20Gracery%20Kyoto%20Sanjo">Apple Maps</a> · <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Gracery+Kyoto+Sanjo">Google Maps</a></span></li><li>Subway Karasuma → Tozai (Kyoto Shiyakusho‑mae) or taxi. Breakfast included.</li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Kyoto city links can be added on request.</li></ul>
+    </details>
+  </section>
+
+  <section id="oct14" class="section day">
+    <h2>Tue 14 Oct — Kyoto ⇄ Nara</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: Kyoto — night 2 of 3.</strong> Day trip to Nara (no hotel change). See Tōdai‑ji’s Great Buddha and Kasuga‑taisha’s lantern paths.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚆 JR</span> &nbsp; <strong>Ticket 19</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Kyoto → Nara</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">JR Nara Line (suggested)</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">10:07 → 10:51</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Use any suitable service.</div></div>
+    </div>
+    
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚆 JR</span> &nbsp; <strong>Ticket 20</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Nara → Kyoto</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">JR Nara Line (suggested)</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">17:07 → 17:51</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Use any suitable service.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Nara Park, Tōdai‑ji Great Buddha Hall, Kasuga‑taisha. Return to Kyoto evening.</p>
+    <h3>Key information</h3>
+    <ul><li>Tōdai‑ji: <a href="https://www.todaiji.or.jp/en/">official</a></li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Nara Park information can be linked if you’d like opening details.</li></ul>
+    </details>
+  </section>
+
+  <section id="oct15" class="section day">
+    <h2>Wed 15 Oct — Kyoto (guided morning)</h2>
+    <h3>Overview</h3>
+    <p><strong>Stay: Kyoto — night 3 of 3.</strong> Guided morning: meet 08:45 by McDonald’s Shichijo Keihan; Sanjūsangendō, Tōfuku‑ji and Fushimi Inari; afternoon free.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚶‍♂️🚆 Voucher</span> &nbsp; <strong>Ticket 21</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Kyoto walking/rail tour</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Shared tour</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">Meet 08:45</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">—</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Present voucher at meeting point.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Meet 08:45 by McDonald’s Shichijo Keihan. Visits: Sanjūsangendō, Tōfuku‑ji gardens, Fushimi Inari. Afternoon free.</p>
+    <h3>Key information</h3>
+    <ul><li>Meeting point maps: <a href="https://maps.apple.com/?q=McDonald%27s%20Shichijo%20Keihan">Apple Maps</a> • <a href="https://www.google.com/maps/search/?api=1&query=McDonald%27s+Shichijo+Keihan">Google Maps</a></li><li>Sanjūsangendō: <a href="https://www.sanjusangendo.jp/">official (JP)</a> | Tōfuku‑ji: <a href="https://tofukuji.jp/guide/tour/en/">official (EN)</a> | Fushimi Inari: <a href="https://inari.jp/en/">official</a></li><li>Customer Care (24h): 03‑4520‑8633.</li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      <ul><li>Further context pages can be expanded if you want deeper notes per sight.</li></ul>
+    </details>
+  </section>
+
+  <section id="oct16" class="section day">
+    <h2>Thu 16 Oct — Kyoto → Kansai Airport (departure)</h2>
+    <h3>Overview</h3>
+    <p><strong>Departure day.</strong> Check‑out and ride HARUKA to Kansai Airport. Allow time for check‑in and duty‑free.</p>
+    <h3>Travel</h3>
+    <div class="travelwrap">
+    <div class="travelcard">
+      <div class="badges"><span class="mode">🚆 Ltd. Express</span> &nbsp; <strong>Ticket 22</strong></div>
+      <div class="row"><div class="k">Route</div><div class="v">Kyoto → Kansai Airport</div></div>
+      <div class="row"><div class="k">Service</div><div class="v">Haruka #25</div></div>
+      <div class="row"><div class="k">Depart–Arrive</div><div class="v">12:00 → 13:20</div></div>
+      <div class="row"><div class="k">Seat</div><div class="v">Reserved</div></div>
+      <div class="row"><div class="k">Notes</div><div class="v">Keep ticket until destination.</div></div>
+    </div>
+    </div>
+    <h3>Activities</h3>
+    <p>Depart Japan.</p>
+    <h3>Key information</h3>
+    <ul><li>JR‑West HARUKA: <a href="https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/">ticket info</a> • <a href="https://www.westjr.co.jp/global/en/travel/shopping/access/train.html">service overview</a></li><li>Hotel check‑out typically 11:00. Return pocket Wi‑Fi at front desk.</li><li>Shinkansen oversized luggage rules (for relevant days): <a href="https://global.jr-central.co.jp/en/info/oversized-baggage/">details</a>.</li></ul>
+    <details class="card"><summary>More info & official links</summary>
+      
+    </details>
+  </section>
+
+  <footer class="section">
+    <hr>
+    <p>Accessible edition — stay‑first overviews, larger text, stacked travel cards, “Today” & “High contrast” toggles, plus a smart “Next up” panel.</p>
+  </footer>
+</div>
+<div class="controls"><button id="todayBtn" class="btn">Today</button></div>
+
+<script>
+window.tripEvents = [
+  {title:'🚌 Bus: Matsumoto → Takayama (Tkt #9)', iso:'2025-10-08T11:55:00+09:00', anchor:'oct8'},
+  {title:'🚌 Bus: Takayama → Shirakawa‑go (Tkt #10)', iso:'2025-10-10T09:35:00+09:00', anchor:'oct10'},
+  {title:'🚌 Bus: Shirakawa‑go → Kanazawa (Tkt #11)', iso:'2025-10-10T13:50:00+09:00', anchor:'oct10'},
+  {title:'🚄 Kagayaki #507: Kanazawa → Tsuruga', iso:'2025-10-11T11:54:00+09:00', anchor:'oct11'},
+  {title:'🚆 Thunderbird #22: Tsuruga → Kyoto', iso:'2025-10-11T13:14:00+09:00', anchor:'oct11'},
+  {title:'🚄 Nozomi #33: Kyoto → Hiroshima', iso:'2025-10-11T14:46:00+09:00', anchor:'oct11'},
+  {title:'Hiroshima ⇄ Miyajima — start day', iso:'2025-10-12T09:00:00+09:00', anchor:'oct12'},
+  {title:'🚄 Nozomi #90: Hiroshima → Kyoto', iso:'2025-10-13T10:03:00+09:00', anchor:'oct13'},
+  {title:'JR Nara Line: Kyoto → Nara', iso:'2025-10-14T10:07:00+09:00', anchor:'oct14'},
+  {title:'JR Nara Line: Nara → Kyoto', iso:'2025-10-14T17:07:00+09:00', anchor:'oct14'},
+  {title:'Guided tour meet — 08:45 (Kyoto)', iso:'2025-10-15T08:45:00+09:00', anchor:'oct15'},
+  {title:'🚆 HARUKA #25: Kyoto → Kansai Airport', iso:'2025-10-16T12:00:00+09:00', anchor:'oct16'}
+];
+</script>
+
+<script>
+
+function tokyoNow(){
+  // Use current UTC and format logic to avoid timezone confusion
+  return new Date(); // event times include +09:00 offsets, so comparison is safe
+}
+function jumpToToday(){
+  try{
+    const fmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo', year:'numeric', month:'2-digit', day:'2-digit'});
+    const parts = fmt.formatToParts(new Date()).reduce((a,p)=>{a[p.type]=p.value;return a;},{});
+    const y = parseInt(parts.year,10), m = parseInt(parts.month,10), d = parseInt(parts.day,10);
+    let anchor = 'oct8';
+    if(y===2025 && m===10){
+      if(d<8) anchor='oct8';
+      else if(d>16) anchor='oct16';
+      else anchor='oct'+d;
+    }
+    location.hash = '#'+anchor;
+  }catch(e){ location.hash = '#oct8'; }
+}
+function toggleContrast(){ document.body.classList.toggle('hc'); }
+
+// Next Up: pick the nearest future event in Tokyo time
+function renderNextUp(){
+  const box = document.getElementById('nextup');
+  if(!box || !window.tripEvents){ return; }
+  const now = tokyoNow();
+  const upcoming = window.tripEvents
+    .map(ev => ({...ev, dt: new Date(ev.iso)}))
+    .filter(ev => ev.dt.getTime() > now.getTime())
+    .sort((a,b)=>a.dt - b.dt)[0];
+  let html = '';
+  if(upcoming){
+    const mins = Math.round((upcoming.dt - now)/60000);
+    const h = Math.floor(mins/60), m = mins%60;
+    const when = h>0 ? `in ${h}h ${m}m` : (m>0 ? `in ${m}m` : 'now');
+    const timeStr = upcoming.dt.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit', timeZone:'Asia/Tokyo'});
+    html = `<h3>Next up</h3>
+      <div class="time">${timeStr} (Tokyo) — ${upcoming.title}</div>
+      <div style="margin-top:6px">
+        <a href="#${upcoming.anchor}" class="smallbtn" style="display:inline-block">Jump to day</a>
+      </div>`;
+  }else{
+    html = `<h3>Next up</h3><p>All scheduled items are complete. Safe travels!</p>`;
+  }
+  box.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderNextUp();
+  setInterval(renderNextUp, 60000);
+});
+
+document.addEventListener('click', e=>{
+  if(e.target && e.target.id==='navToday'){ jumpToToday(); }
+  if(e.target && e.target.id==='todayBtn'){ jumpToToday(); }
+  if(e.target && e.target.id==='incFont'){ adjust(1); }
+  if(e.target && e.target.id==='decFont'){ adjust(-1); }
+  if(e.target && e.target.id==='contrast'){ toggleContrast(); }
+});
+function adjust(dir){
+  const current = parseFloat(getComputedStyle(document.body).fontSize);
+  const next = Math.min(26, Math.max(16, current + dir));
+  document.body.style.fontSize = next + 'px';
+}
+
+</script>
+</body></html>
