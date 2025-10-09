@@ -1,0 +1,527 @@
+{
+“trip_overview”: {
+“travelers”: [“Alasdair Lumsden”, “Shiela Lumsden”],
+“booking_reference”: “IA27AM-JP03”,
+“trip_dates”: {
+“start”: “2025-10-02”,
+“end”: “2025-10-16”
+}
+},
+“self_guide_app”: {
+“login”: “ia27am@selfguide.com”,
+“password”: “NYmKbG9ecw”,
+“device_limit”: 3,
+“note”: “Download before departure from Apple Store or Google Play Store”
+},
+“wifi_router”: {
+“delivery”: “Hotel Vista Tokyo Tsukiji”,
+“return”: “Place in pre-stamped envelope at final hotel checkout (Hotel Gracery Kyoto Sanjo)”,
+“features”: [“No data limit”, “Insured against damage/loss”, “Password on back of device”]
+},
+“emergency_contacts”: {
+“customer_care_24h”: “03-4520-8633”,
+“email”: “japanoperations@exotravel.com”,
+“note”: “Only contact after arrival in Japan; contact Trailfinders agent if still outside Japan”
+},
+“itinerary”: [
+{
+“day”: 8,
+“date”: “2025-10-09”,
+“day_of_week”: “Thursday”,
+“location”: “Takayama”,
+“accommodation”: {
+“name”: “Hotel Associa Takayama Resort”,
+“address”: “1134 Echigo-cho, Takayama-shi, Gifu-ken”,
+“japanese_address”: “〒506-0033 岐阜県高山市越後町1134”,
+“phone”: “0577-36-0001”,
+“website”: “https://www.associa.com/tky/multi-lingual/?wovn=en”,
+“check_in”: “15:00”,
+“check_out”: “12:00”
+},
+“activities”: “Day at leisure”,
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+},
+{
+“day”: 9,
+“date”: “2025-10-10”,
+“day_of_week”: “Friday”,
+“route”: “Takayama - Shirakawago - Kanazawa”,
+“accommodation”: {
+“name”: “Hotel Vista Kanazawa”,
+“address”: “Kanazawa”,
+“japanese_address”: “〒920-0031 石川県金沢市広岡２丁目１３−27”,
+“phone”: “076-260-0007”,
+“website”: “https://www.hotel-vista.jp/kanazawa/index_e.html”,
+“check_in”: “15:00”,
+“check_out”: “10:00”
+},
+“transportation”: [
+{
+“type”: “bus”,
+“operator”: “Nohi Bus”,
+“route”: “Takayama to Shirakawago”,
+“departure”: {
+“time”: “09:35”,
+“location”: “Takayama Nohi Bus Center”
+},
+“arrival”: {
+“time”: “10:25”,
+“location”: “Shirakawa-go Bus Terminal”
+},
+“duration”: “50m”
+},
+{
+“type”: “bus”,
+“operator”: “Nohi Bus”,
+“route”: “Shirakawago to Kanazawa”,
+“departure”: {
+“time”: “13:50”,
+“location”: “Shirakawago Bus Terminal”
+},
+“arrival”: {
+“time”: “15:05”,
+“location”: “Kanazawa Station”
+},
+“duration”: “1h15m”
+}
+],
+“activities”: “Visit Shirakawago UNESCO World Heritage Site (gassho-zukuri thatched farmhouses); Afternoon at leisure in Kanazawa - visit Kanazawa 21st Century Museum of Contemporary Art”,
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+},
+{
+“day”: 10,
+“date”: “2025-10-11”,
+“day_of_week”: “Saturday”,
+“route”: “Kanazawa - Hiroshima”,
+“accommodation”: {
+“name”: “Rihga Royal Hotel Hiroshima”,
+“address”: “6-78 Motomachi, Naka-ku”,
+“japanese_address”: “〒730-0011 広島市中区基町6-78”,
+“phone”: “082-502-1121”,
+“website”: “https://www.rihga.com/hiroshima”,
+“check_in”: “15:00”,
+“check_out”: “11:00”
+},
+“transportation”: [
+{
+“type”: “train”,
+“operator”: “JR Shinkansen Kagayaki”,
+“train_number”: “#507”,
+“route”: “Kanazawa to Tsuruga”,
+“departure”: {
+“time”: “11:54”,
+“location”: “Kanazawa Station”
+},
+“arrival”: {
+“time”: “12:43”,
+“location”: “Tsuruga Station”
+},
+“duration”: “49m”
+},
+{
+“type”: “train”,
+“operator”: “JR Ltd. Express Thunderbird”,
+“train_number”: “#22”,
+“route”: “Tsuruga to Kyoto”,
+“departure”: {
+“time”: “13:14”,
+“location”: “Tsuruga Station”
+},
+“arrival”: {
+“time”: “14:09”,
+“location”: “Kyoto Station”
+},
+“duration”: “55m”
+},
+{
+“type”: “train”,
+“operator”: “JR Shinkansen Nozomi”,
+“train_number”: “#33”,
+“route”: “Kyoto to Hiroshima”,
+“departure”: {
+“time”: “14:46”,
+“location”: “Kyoto Station”
+},
+“arrival”: {
+“time”: “16:27”,
+“location”: “Hiroshima Station”
+},
+“duration”: “1h41m”
+}
+],
+“activities”: “Morning visit to Kenroku-en garden and Kanazawa Castle; Evening at leisure in Hiroshima”,
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+},
+{
+“day”: 11,
+“date”: “2025-10-12”,
+“day_of_week”: “Sunday”,
+“route”: “Hiroshima - Miyajima - Hiroshima”,
+“location”: “Hiroshima & Miyajima”,
+“accommodation”: {
+“name”: “Rihga Royal Hotel Hiroshima”,
+“same_as_previous”: true
+},
+“transportation”: [
+{
+“type”: “train”,
+“operator”: “JR Sanyo Line”,
+“route”: “Hiroshima to Miyajimaguchi”,
+“departure”: {
+“location”: “Hiroshima Station”
+},
+“arrival”: {
+“location”: “Miyajimaguchi”
+},
+“duration”: “30m”
+},
+{
+“type”: “ferry”,
+“operator”: “Matsudai Ferry”,
+“route”: “Miyajimaguchi to Miyajima”,
+“departure”: {
+“location”: “Miyajimaguchi”
+},
+“arrival”: {
+“location”: “Miyajima”
+},
+“duration”: “10m”
+}
+],
+“activities”: “Morning: Hiroshima Peace Memorial Park and Museum; Afternoon: Ferry to Miyajima to see Itsukushima Shrine and floating torii gate; Optional cable car or hike up Mount Misen (530m)”,
+“highlights”: [
+“Hiroshima Peace Memorial Park and Museum”,
+“Miyajima Island - UNESCO World Heritage Site”,
+“Itsukushima Shrine with floating torii gate”,
+“Mount Misen (optional)”,
+“Local maple leaf shaped cakes (momiji manju)”
+],
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+},
+{
+“day”: 12,
+“date”: “2025-10-13”,
+“day_of_week”: “Monday”,
+“route”: “Hiroshima - Kyoto”,
+“accommodation”: {
+“name”: “Hotel Gracery Kyoto Sanjo”,
+“address”: “420 Sakuranochō, Nakagyo Ward, Kyoto, 604-8035”,
+“japanese_address”: “〒604-8035 京都府京都市中京区桜之町４２０”,
+“phone”: “+8175-222-1111”,
+“website”: “https://kyoto.gracery.com/”,
+“check_in”: “14:00”,
+“check_out”: “11:00”
+},
+“transportation”: [
+{
+“type”: “train”,
+“operator”: “JR Shinkansen Nozomi”,
+“train_number”: “#90”,
+“route”: “Hiroshima to Kyoto”,
+“departure”: {
+“time”: “10:03”,
+“location”: “Hiroshima Station”
+},
+“arrival”: {
+“time”: “11:43”,
+“location”: “Kyoto Station”
+},
+“duration”: “1h40m”
+}
+],
+“activities”: “Afternoon at leisure in Kyoto”,
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+},
+{
+“day”: 13,
+“date”: “2025-10-14”,
+“day_of_week”: “Tuesday”,
+“route”: “Kyoto - Nara - Kyoto”,
+“location”: “Kyoto & Nara”,
+“accommodation”: {
+“name”: “Hotel Gracery Kyoto Sanjo”,
+“same_as_previous”: true
+},
+“transportation”: [
+{
+“type”: “train”,
+“operator”: “JR Nara Line”,
+“route”: “Kyoto to Nara”,
+“departure”: {
+“time”: “10:07”,
+“location”: “Kyoto Station”
+},
+“arrival”: {
+“time”: “10:51”,
+“location”: “Nara Station”
+},
+“duration”: “44m”
+},
+{
+“type”: “train”,
+“operator”: “JR Nara Line”,
+“route”: “Nara to Kyoto”,
+“departure”: {
+“time”: “17:07”,
+“location”: “Nara Station”
+},
+“arrival”: {
+“time”: “17:51”,
+“location”: “Kyoto Station”
+},
+“duration”: “44m”
+}
+],
+“activities”: “Day trip to Nara: Visit Nara Park (Deer Park), Todai-ji Temple (world’s largest wooden building), Kasuga-taisha Shrine”,
+“highlights”: [
+“Nara Park with tame deer”,
+“Todai-ji Temple - world’s largest wooden building”,
+“Kasuga-taisha - Nara’s most celebrated Shinto shrine”
+],
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+},
+{
+“day”: 14,
+“date”: “2025-10-15”,
+“day_of_week”: “Wednesday”,
+“location”: “Kyoto”,
+“accommodation”: {
+“name”: “Hotel Gracery Kyoto Sanjo”,
+“same_as_previous”: true
+},
+“guided_tour”: {
+“duration”: “4h”,
+“meeting_time”: “08:45”,
+“meeting_place”: “In front of McDonald’s Shichijo Keihan”,
+“meeting_address_english”: “229 Hiyoshicho, Higashiyama Ward, Kyoto, 605-0993”,
+“meeting_address_japanese”: “京都府京都市東山区七条通鞘町西入ル日吉町２２９”
+},
+“itinerary”: [
+{
+“stop”: “Sanjusangendo Temple”,
+“description”: “1,001 glittering gold statues in world’s longest wooden building”
+},
+{
+“stop”: “Traditional sweetshop”,
+“description”: “Enjoy small snack”
+},
+{
+“stop”: “Tofukuji Temple”,
+“description”: “Zen temple complex with magnificent gardens”
+},
+{
+“stop”: “Fushimi Inari Shrine”,
+“description”: “Thousands of vermillion torii gates in tunnels up hillside”
+}
+],
+“activities”: “Guided 4-hour tour of Kyoto temples and shrines”,
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+},
+{
+“day”: 15,
+“date”: “2025-10-16”,
+“day_of_week”: “Thursday”,
+“route”: “Kyoto - Kansai Airport”,
+“accommodation”: {
+“name”: “Hotel Gracery Kyoto Sanjo”,
+“check_out”: “11:00”
+},
+“transportation”: [
+{
+“type”: “train”,
+“operator”: “JR Ltd. Express Haruka”,
+“train_number”: “#25”,
+“route”: “Kyoto to Kansai Airport”,
+“departure”: {
+“time”: “12:00”,
+“location”: “Kyoto Station”
+},
+“arrival”: {
+“time”: “13:20”,
+“location”: “Kansai Airport Station”
+},
+“duration”: “1h20m”
+}
+],
+“activities”: “At leisure until airport transfer; Return WiFi router in pre-stamped envelope at hotel checkout”,
+“meals”: {
+“breakfast”: true,
+“lunch”: false,
+“dinner”: false
+}
+}
+],
+“ticket_summary”: {
+“tickets”: [
+{
+“ticket_id”: “12”,
+“date”: “2025-10-11”,
+“type”: “JR Fare Ticket (x2)”,
+“from”: “Kanazawa”,
+“to”: “Hiroshima”,
+“note”: “Keep until final destination”
+},
+{
+“ticket_id”: “13”,
+“date”: “2025-10-11”,
+“type”: “JR Shinkansen Kagayaki #507 Ticket (x2)”,
+“segments”: [
+{
+“from”: “Kanazawa”,
+“to”: “Tsuruga”
+},
+{
+“from”: “Tsuruga”,
+“to”: “Kyoto”,
+“train”: “JR Ltd. Express Thunderbird #22”
+}
+],
+“note”: “Reserved seats. Keep until final destination. Use with ticket 12”
+},
+{
+“ticket_id”: “14”,
+“date”: “2025-10-11”,
+“type”: “JR Shinkansen Nozomi #33 Ticket (x2)”,
+“from”: “Kyoto”,
+“to”: “Hiroshima”,
+“note”: “Reserved seats. Keep until final destination. Use with ticket 12”
+},
+{
+“ticket_id”: “15”,
+“date”: “2025-10-12”,
+“type”: “JR Fare Ticket (x2)”,
+“from”: “Hiroshima”,
+“to”: “Miyajimaguchi”,
+“note”: “Keep these tickets until final destination”
+},
+{
+“ticket_id”: “16”,
+“date”: “2025-10-12”,
+“type”: “Hiroshima 1-Day Streetcar & Ferry Pass (x2)”,
+“coverage”: “Unlimited rides on Hiroshima Electric Railway streetcars and Miyajima Matsudai Liner”
+},
+{
+“ticket_id”: “17”,
+“date”: “2025-10-12”,
+“type”: “JR Fare Ticket (x2)”,
+“from”: “Miyajimaguchi”,
+“to”: “Hiroshima”,
+“note”: “Keep these tickets until final destination”
+},
+{
+“ticket_id”: “18”,
+“date”: “2025-10-13”,
+“type”: “JR Shinkansen Nozomi #90 Ticket (x2)”,
+“from”: “Hiroshima”,
+“to”: “Kyoto”,
+“note”: “Reserved seats. Keep these tickets until final destination”
+},
+{
+“ticket_id”: “19”,
+“date”: “2025-10-14”,
+“type”: “JR Fare Ticket (x2)”,
+“from”: “Kyoto”,
+“to”: “Nara”,
+“note”: “Keep these tickets until final destination”
+},
+{
+“ticket_id”: “20”,
+“date”: “2025-10-14”,
+“type”: “JR Fare Ticket (x2)”,
+“from”: “Nara”,
+“to”: “Kyoto”,
+“note”: “Keep these tickets until final destination”
+},
+{
+“ticket_id”: “21”,
+“date”: “2025-10-15”,
+“type”: “Shared Tour Voucher (x1)”,
+“note”: “Transfer to and from venue is under own arrangement”
+},
+{
+“ticket_id”: “22”,
+“date”: “2025-10-16”,
+“type”: “JR Ltd. Express Haruka Ticket (x2)”,
+“from”: “Kyoto”,
+“to”: “Kansai Airport”,
+“note”: “Reserved seats. Keep these tickets until final destination”
+}
+]
+},
+“important_information”: {
+“oversized_luggage_shinkansen”: {
+“rule”: “For Tokaido (Tokyo-Osaka), Sanyo (Osaka-Fukuoka), and Kyushu (Fukuoka-Kagoshima) Shinkansen lines”,
+“under_160cm”: “Can be placed in front of seat or overhead rack without reservation”,
+“161_250cm”: “Must reserve special seat with oversized baggage area”,
+“over_250cm”: “Cannot be brought on bullet trains”
+},
+“ic_cards”: {
+“purpose”: “Prepaid transport card for trains, buses, convenience stores, vending machines”,
+“types”: [“PASMO (iPhone app with Apple Pay)”, “ICOCA (from ticket machines)”, “Welcome Suica (at Travel Service Centers)”],
+“recommended”: “PASMO app for iPhone users - easiest option”
+},
+“natural_disaster_protocol”: [
+“Return to or stay at hotel so you can be located”,
+“If staying at hotel not possible, follow hotel instructions”,
+“If leaving hotel, contact Customer Care team and/or leave message at hotel”
+]
+},
+“destinations_info”: {
+“takayama”: {
+“description”: “Castle town at base of Japanese Alps with beautifully preserved old town dating to Edo period (1603-1868)”,
+“highlights”: [“Preserved inns, tea houses and shops”, “Sake breweries”, “Takayama Jinya (former government house)”]
+},
+“shirakawago”: {
+“description”: “UNESCO World Heritage Site famous for unique gassho-zukuri thatched wooden farmhouses”,
+“highlights”: [“Farmhouses over 250 years old”, “Gassho-zukuri architecture”, “Traditional steep thatched roofs”]
+},
+“kanazawa”: {
+“description”: “One of Japan’s wealthiest towns during 17th Century Edo period, now key cultural center”,
+“highlights”: [“Kenroku-en garden”, “Kanazawa Castle”, “21st Century Museum of Contemporary Art”, “Geisha and Samurai districts”]
+},
+“hiroshima”: {
+“description”: “Vibrant rebuilt city with wide streets, unique foods, important historical sites”,
+“highlights”: [“Peace Memorial Museum & Park”, “Shukkeien Garden”, “Hiroshima Castle”, “Gateway to Miyajima”]
+},
+“miyajima”: {
+“description”: “Sacred wooded island with UNESCO World Heritage Itsukushima Shrine”,
+“highlights”: [“Floating torii gate”, “Itsukushima Shrine (6th Century)”, “Mount Misen cable car/hike”, “Maple leaf shaped cakes”]
+},
+“kyoto”: {
+“description”: “Japan’s ancient capital, culturally rich city with extensive historical monuments”,
+“highlights”: [“1,600 Buddhist temples”, “400 Shinto shrines”, “Beautiful gardens”, “Gion geisha district”]
+},
+“nara”: {
+“description”: “Japan’s capital in 8th Century, center of Japanese culture and civilization”,
+“highlights”: [“Nara Park with tame deer”, “Todai-ji Temple”, “Kasuga-taisha Shrine”, “8th Century wooden buildings”]
+}
+}
+}
