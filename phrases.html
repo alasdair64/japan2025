@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f172a">
+<title>Japan Phrasebook</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#020617;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--info:#3b82f6;--border:rgba(255,255,255,0.06)}body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:14px;-webkit-tap-highlight-color:transparent}.header{text-align:center;padding:20px 0;margin-bottom:20px}.title{font-size:24px;font-weight:600;margin-bottom:8px}.subtitle{font-size:14px;color:var(--muted)}.cat{margin-bottom:24px}.cat-title{font-size:18px;font-weight:600;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--accent)}.phrase{background:var(--card);border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--info)}.en{font-size:16px;font-weight:600;margin-bottom:8px}.jp{font-size:20px;margin-bottom:4px;color:var(--accent)}.rom{font-size:14px;color:var(--muted);font-style:italic}.note{font-size:12px;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px solid var(--border)}.search{background:var(--card);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:12px;font-size:16px;width:100%;margin-bottom:20px}.search:focus{outline:none;border-color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="title">🇯🇵 Japan Phrasebook</div>
+<div class="subtitle">Essential Japanese phrases with pronunciation</div>
+</div>
+
+<input type="text" class="search" id="search" placeholder="Search phrases...">
+
+<div id="content">
+
+<div class="cat">
+<div class="cat-title">👋 Greetings & Basics</div>
+<div class="phrase">
+<div class="en">Hello / Good afternoon</div>
+<div class="jp">こんにちは</div>
+<div class="rom">Kon-nee-chee-wah</div>
+</div>
+<div class="phrase">
+<div class="en">Good morning</div>
+<div class="jp">おはようございます</div>
+<div class="rom">Oh-ha-yoh goh-zai-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Good evening</div>
+<div class="jp">こんばんは</div>
+<div class="rom">Kon-ban-wah</div>
+</div>
+<div class="phrase">
+<div class="en">Goodbye</div>
+<div class="jp">さようなら</div>
+<div class="rom">Sah-yoh-nah-rah</div>
+</div>
+<div class="phrase">
+<div class="en">See you later / Bye (casual)</div>
+<div class="jp">じゃあね</div>
+<div class="rom">Jah-neh</div>
+</div>
+<div class="phrase">
+<div class="en">Good night</div>
+<div class="jp">おやすみなさい</div>
+<div class="rom">Oh-yah-soo-mee nah-sai</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🙏 Please & Thank You</div>
+<div class="phrase">
+<div class="en">Thank you</div>
+<div class="jp">ありがとう</div>
+<div class="rom">Ah-ree-gah-toh</div>
+</div>
+<div class="phrase">
+<div class="en">Thank you very much</div>
+<div class="jp">ありがとうございます</div>
+<div class="rom">Ah-ree-gah-toh goh-zai-mas</div>
+</div>
+<div class="phrase">
+<div class="en">You're welcome</div>
+<div class="jp">どういたしまして</div>
+<div class="rom">Doh-ee-tah-shee-mah-shteh</div>
+</div>
+<div class="phrase">
+<div class="en">Please (when asking)</div>
+<div class="jp">お願いします</div>
+<div class="rom">Oh-neh-gai shee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Please (when offering)</div>
+<div class="jp">どうぞ</div>
+<div class="rom">Doh-zoh</div>
+</div>
+<div class="phrase">
+<div class="en">I'm sorry / Excuse me</div>
+<div class="jp">すみません</div>
+<div class="rom">Soo-mee-mah-sen</div>
+</div>
+<div class="phrase">
+<div class="en">I'm very sorry</div>
+<div class="jp">ごめんなさい</div>
+<div class="rom">Goh-men nah-sai</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">❓ Questions & Basics</div>
+<div class="phrase">
+<div class="en">Yes</div>
+<div class="jp">はい</div>
+<div class="rom">Hai</div>
+</div>
+<div class="phrase">
+<div class="en">No</div>
+<div class="jp">いいえ</div>
+<div class="rom">Ee-eh</div>
+</div>
+<div class="phrase">
+<div class="en">I don't understand</div>
+<div class="jp">わかりません</div>
+<div class="rom">Wah-kah-ree-mah-sen</div>
+</div>
+<div class="phrase">
+<div class="en">Do you speak English?</div>
+<div class="jp">英語を話せますか？</div>
+<div class="rom">Ay-go oh hah-nah-seh-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Please speak slowly</div>
+<div class="jp">ゆっくり話してください</div>
+<div class="rom">Yook-koo-ree hah-nah-shteh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">What is this?</div>
+<div class="jp">これは何ですか？</div>
+<div class="rom">Koh-reh wah nan des-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">How much?</div>
+<div class="jp">いくらですか？</div>
+<div class="rom">Ee-koo-rah des-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Where is...?</div>
+<div class="jp">...はどこですか？</div>
+<div class="rom">...wah doh-koh des-kah?</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🚇 Getting Around</div>
+<div class="phrase">
+<div class="en">Where is the station?</div>
+<div class="jp">駅はどこですか？</div>
+<div class="rom">Eh-kee wah doh-koh des-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Where is the toilet?</div>
+<div class="jp">トイレはどこですか？</div>
+<div class="rom">Toy-reh wah doh-koh des-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">I'm lost</div>
+<div class="jp">道に迷いました</div>
+<div class="rom">Mee-chee nee mah-yoy-mah-shtah</div>
+</div>
+<div class="phrase">
+<div class="en">Can you help me?</div>
+<div class="jp">手伝ってください</div>
+<div class="rom">Teh-tsu-daht-teh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">Ticket, please</div>
+<div class="jp">切符をください</div>
+<div class="rom">Kip-poo oh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">How do I get to...?</div>
+<div class="jp">...へはどう行きますか？</div>
+<div class="rom">...eh wah doh ee-kee-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Train</div>
+<div class="jp">電車</div>
+<div class="rom">Den-shah</div>
+</div>
+<div class="phrase">
+<div class="en">Bus</div>
+<div class="jp">バス</div>
+<div class="rom">Bah-soo</div>
+</div>
+<div class="phrase">
+<div class="en">Taxi</div>
+<div class="jp">タクシー</div>
+<div class="rom">Tah-koo-shee</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🍜 Food & Dining</div>
+<div class="phrase">
+<div class="en">I'd like this, please</div>
+<div class="jp">これをください</div>
+<div class="rom">Koh-reh oh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">Delicious!</div>
+<div class="jp">おいしい！</div>
+<div class="rom">Oy-shee!</div>
+</div>
+<div class="phrase">
+<div class="en">The check, please</div>
+<div class="jp">お会計をお願いします</div>
+<div class="rom">Oh-kai-kay oh oh-neh-gai shee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Water, please</div>
+<div class="jp">お水をください</div>
+<div class="rom">Oh-mee-zoo oh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">Menu, please</div>
+<div class="jp">メニューをください</div>
+<div class="rom">Meh-nyoo oh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">Do you have an English menu?</div>
+<div class="jp">英語のメニューはありますか？</div>
+<div class="rom">Ay-go no meh-nyoo wah ah-ree-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">I'm vegetarian</div>
+<div class="jp">ベジタリアンです</div>
+<div class="rom">Beh-jee-tah-ree-ahn des</div>
+</div>
+<div class="phrase">
+<div class="en">No meat, please</div>
+<div class="jp">肉なしでお願いします</div>
+<div class="rom">Nee-koo nah-shee deh oh-neh-gai shee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Beer, please</div>
+<div class="jp">ビールをください</div>
+<div class="rom">Bee-roo oh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">Cheers!</div>
+<div class="jp">乾杯！</div>
+<div class="rom">Kan-pai!</div>
+</div>
+<div class="phrase">
+<div class="en">Before eating (thank you for the meal)</div>
+<div class="jp">いただきます</div>
+<div class="rom">Ee-tah-dah-kee-mas</div>
+<div class="note">Say this before eating</div>
+</div>
+<div class="phrase">
+<div class="en">After eating (that was delicious)</div>
+<div class="jp">ごちそうさまでした</div>
+<div class="rom">Goh-chee-soh-sah-mah desh-tah</div>
+<div class="note">Say this after eating</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🏨 Hotel & Accommodation</div>
+<div class="phrase">
+<div class="en">I have a reservation</div>
+<div class="jp">予約があります</div>
+<div class="rom">Yoh-yah-koo gah ah-ree-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Check in, please</div>
+<div class="jp">チェックインお願いします</div>
+<div class="rom">Chek-koo een oh-neh-gai shee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Check out, please</div>
+<div class="jp">チェックアウトお願いします</div>
+<div class="rom">Chek-koo ow-toh oh-neh-gai shee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Key, please</div>
+<div class="jp">鍵をください</div>
+<div class="rom">Kah-gee oh koo-dah-sai</div>
+</div>
+<div class="phrase">
+<div class="en">Do you have WiFi?</div>
+<div class="jp">WiFiはありますか？</div>
+<div class="rom">Why-fai wah ah-ree-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">What time is breakfast?</div>
+<div class="jp">朝食は何時ですか？</div>
+<div class="rom">Choh-shoh-koo wah nan-jee des-kah?</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🛍️ Shopping</div>
+<div class="phrase">
+<div class="en">How much is this?</div>
+<div class="jp">これはいくらですか？</div>
+<div class="rom">Koh-reh wah ee-koo-rah des-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Too expensive</div>
+<div class="jp">高すぎます</div>
+<div class="rom">Tah-kah-soo-gee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">I'm just looking</div>
+<div class="jp">見ているだけです</div>
+<div class="rom">Mee-teh ee-roo dah-keh des</div>
+</div>
+<div class="phrase">
+<div class="en">Can I try this?</div>
+<div class="jp">試着できますか？</div>
+<div class="rom">Shee-chah-koo deh-kee-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Do you have a bigger size?</div>
+<div class="jp">大きいサイズはありますか？</div>
+<div class="rom">Oh-kee sai-zoo wah ah-ree-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Do you have a smaller size?</div>
+<div class="jp">小さいサイズはありますか？</div>
+<div class="rom">Chee-sai sai-zoo wah ah-ree-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">I'll take it</div>
+<div class="jp">これにします</div>
+<div class="rom">Koh-reh nee shee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Can I pay by credit card?</div>
+<div class="jp">クレジットカードで払えますか？</div>
+<div class="rom">Koo-reh-jeet-toh kah-doh deh hah-rah-eh-mas-kah?</div>
+</div>
+<div class="phrase">
+<div class="en">Receipt, please</div>
+<div class="jp">領収書をください</div>
+<div class="rom">Ryoh-shoo-shoh oh koo-dah-sai</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🚨 Emergency</div>
+<div class="phrase">
+<div class="en">Help!</div>
+<div class="jp">助けて！</div>
+<div class="rom">Tas-keh-teh!</div>
+</div>
+<div class="phrase">
+<div class="en">Call the police!</div>
+<div class="jp">警察を呼んでください！</div>
+<div class="rom">Kay-sat-soo oh yon-deh koo-dah-sai!</div>
+</div>
+<div class="phrase">
+<div class="en">Call an ambulance!</div>
+<div class="jp">救急車を呼んでください！</div>
+<div class="rom">Kyoo-kyoo-shah oh yon-deh koo-dah-sai!</div>
+</div>
+<div class="phrase">
+<div class="en">I need a doctor</div>
+<div class="jp">医者が必要です</div>
+<div class="rom">Ee-shah gah hee-tsoo-yoh des</div>
+</div>
+<div class="phrase">
+<div class="en">Hospital</div>
+<div class="jp">病院</div>
+<div class="rom">Byoh-een</div>
+</div>
+<div class="phrase">
+<div class="en">Police</div>
+<div class="jp">警察</div>
+<div class="rom">Kay-sat-soo</div>
+</div>
+<div class="phrase">
+<div class="en">I've lost my passport</div>
+<div class="jp">パスポートを無くしました</div>
+<div class="rom">Pas-poh-toh oh nah-koo-shee-mah-shtah</div>
+</div>
+<div class="phrase">
+<div class="en">I'm sick</div>
+<div class="jp">病気です</div>
+<div class="rom">Byoh-kee des</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🎌 Polite Expressions</div>
+<div class="phrase">
+<div class="en">Welcome (said by staff)</div>
+<div class="jp">いらっしゃいませ</div>
+<div class="rom">Ee-rah-shai-mah-seh</div>
+<div class="note">You'll hear this in shops/restaurants</div>
+</div>
+<div class="phrase">
+<div class="en">Nice to meet you</div>
+<div class="jp">はじめまして</div>
+<div class="rom">Hah-jee-meh-mah-shteh</div>
+</div>
+<div class="phrase">
+<div class="en">Pleased to meet you (response)</div>
+<div class="jp">よろしくお願いします</div>
+<div class="rom">Yoh-roh-shee-koo oh-neh-gai shee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">I'm going now / I'm leaving</div>
+<div class="jp">行ってきます</div>
+<div class="rom">Eet-teh kee-mas</div>
+</div>
+<div class="phrase">
+<div class="en">Welcome back / Take care</div>
+<div class="jp">行ってらっしゃい</div>
+<div class="rom">Eet-teh rah-shai</div>
+</div>
+<div class="phrase">
+<div class="en">I'm back / I'm home</div>
+<div class="jp">ただいま</div>
+<div class="rom">Tah-dah-ee-mah</div>
+</div>
+<div class="phrase">
+<div class="en">Welcome home</div>
+<div class="jp">お帰りなさい</div>
+<div class="rom">Oh-kah-eh-ree nah-sai</div>
+</div>
+</div>
+
+<div class="cat">
+<div class="cat-title">🔢 Numbers</div>
+<div class="phrase">
+<div class="en">One</div>
+<div class="jp">一</div>
+<div class="rom">Ee-chee</div>
+</div>
+<div class="phrase">
+<div class="en">Two</div>
+<div class="jp">二</div>
+<div class="rom">Nee</div>
+</div>
+<div class="phrase">
+<div class="en">Three</div>
+<div class="jp">三</div>
+<div class="rom">San</div>
+</div>
+<div class="phrase">
+<div class="en">Four</div>
+<div class="jp">四</div>
+<div class="rom">Shee / Yon</div>
+</div>
+<div class="phrase">
+<div class="en">Five</div>
+<div class="jp">五</div>
+<div class="rom">Go</div>
+</div>
+<div class="phrase">
+<div class="en">Six</div>
+<div class="jp">六</div>
+<div class="rom">Roh-koo</div>
+</div>
+<div class="phrase">
+<div class="en">Seven</div>
+<div class="jp">七</div>
+<div class="rom">Shee-chee / Nah-nah</div>
+</div>
+<div class="phrase">
+<div class="en">Eight</div>
+<div class="jp">八</div>
+<div class="rom">Hah-chee</div>
+</div>
+<div class="phrase">
+<div class="en">Nine</div>
+<div class="jp">九</div>
+<div class="rom">Kyoo / Koo</div>
+</div>
+<div class="phrase">
+<div class="en">Ten</div>
+<div class="jp">十</div>
+<div class="rom">Joo</div>
+</div>
+<div class="phrase">
+<div class="en">Hundred</div>
+<div class="jp">百</div>
+<div class="rom">Hyah-koo</div>
+</div>
+<div class="phrase">
+<div class="en">Thousand</div>
+<div class="jp">千</div>
+<div class="rom">Sen</div>
+</div>
+</div>
+
+</div>
+
+<script>
+const search=document.getElementById('search');
+const content=document.getElementById('content');
+const allPhrases=content.innerHTML;
+
+search.addEventListener('input',function(){
+  const term=this.value.toLowerCase();
+  if(!term){
+    content.innerHTML=allPhrases;
+    return;
+  }
+  
+  const cats=content.querySelectorAll('.cat');
+  cats.forEach(cat=>{
+    const phrases=cat.querySelectorAll('.phrase');
+    let visibleCount=0;
+    
+    phrases.forEach(phrase=>{
+      const en=phrase.querySelector('.en').textContent.toLowerCase();
+      const rom=phrase.querySelector('.rom').textContent.toLowerCase();
+      
+      if(en.includes(term)||rom.includes(term)){
+        phrase.style.display='block';
+        visibleCount++;
+      }else{
+        phrase.style.display='none';
+      }
+    });
+    
+    cat.style.display=visibleCount>0?'block':'none';
+  });
+});
+</script>
+</body>
+</html>
