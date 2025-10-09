@@ -3,35 +3,34 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Japan Itinerary — 9–16 Oct 2025 (Collapsible, Mobile Travel Tables)</title>
-<meta name="description" content="Itinerary with stacked travel tables for mobile, collapsible descriptions, and activity cards.">
+<title>Japan Itinerary — Mobile UX (9–16 Oct 2025)</title>
+<meta name="description" content="Mobile-first itinerary with compact header, persistent font controls, travel tables and collapsible content.">
 <style>
-:root{--bg:#fff;--fg:#111;--muted:#555;--line:#e6e7eb;--chip:#f7f8fb;--accent:#2F3C7E}
+:root{--bg:#fff;--fg:#111;--muted:#555;--line:#e6e7eb;--chip:#f7f8fb;--accent:#2F3C7E;--fs:17px}
 @media(prefers-color-scheme:dark){
   :root{--bg:#0b0c0f;--fg:#ececec;--muted:#b8b8b8;--line:#2a3240;--chip:#161a22;--accent:#8ea1ff}
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:19px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial}
-.container{max-width:900px;margin:0 auto;padding:16px}
-header{position:sticky;top:0;background:var(--bg);z-index:20;border-bottom:1px solid var(--line);padding:10px 0 12px 0}
-h1{font-size:1.8rem;margin:0}
-.sub{color:var(--muted);font-size:0.95rem;margin-top:6px}
-.nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.nav a,.nav button{border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--fg);text-decoration:none;font-weight:600}
-.nav button{background:var(--accent);color:#fff;border-color:var(--accent)}
-.section{margin:16px 0;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--chip)}
-h2{margin:0 0 8px 0;font-size:1.35rem}
-h3{margin:10px 0 6px 0;font-size:1.1rem;color:var(--accent)}
-.day{scroll-margin-top:110px}
-/* Old wide table wrapper kept for visual consistency */
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:var(--fs)/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial}
+.container{max-width:900px;margin:0 auto;padding:14px}
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:8px;height:44px;padding:0 10px;transition:transform .25s ease}
+.topbar.hide{transform:translateY(-100%)}
+.brand{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw}
+.actions{display:flex;gap:8px}
+.actions .btn{border:1px solid var(--line);background:var(--chip);color:var(--fg);border-radius:999px;padding:6px 10px;font-weight:700}
+.actions .primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.section{margin:14px 0;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--chip)}
+h2{margin:0 0 8px 0;font-size:1.25rem}
+h3{margin:10px 0 6px 0;font-size:1.05rem;color:var(--accent)}
+.day{scroll-margin-top:60px}
 .table{background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;padding:6px}
-/* New stacked mini-tables for each ticket: */
 .stackset .mini{width:100%;border:1px solid var(--line);border-radius:12px;margin:8px 0;background:var(--bg);border-collapse:separate;overflow:hidden}
-.stackset .mini th{background:var(--chip);text-align:left;padding:8px;width:132px;vertical-align:top}
+.stackset .mini th{background:var(--chip);text-align:left;padding:8px;width:128px;vertical-align:top}
 .stackset .mini td{padding:8px}
 .stackset .mini tr + tr td, .stackset .mini tr + tr th{border-top:1px solid var(--line)}
 .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--chip);border:1px solid var(--line);font-size:0.95rem}
-.kv{display:grid;grid-template-columns:120px 1fr;gap:8px}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:8px}
 summary{cursor:pointer;user-select:none}
 details{border:1px dashed var(--line);border-radius:10px;padding:10px;margin-top:8px;background:var(--bg)}
 .cardlist{display:grid;grid-template-columns:1fr;gap:10px}
@@ -39,28 +38,34 @@ details{border:1px dashed var(--line);border-radius:10px;padding:10px;margin-top
 .card h4{margin:0 0 4px 0}
 .card small{color:var(--muted)}
 @media(min-width:700px){ .cardlist{grid-template-columns:1fr 1fr} }
-a{color:var(--accent);}
-.controls{position:fixed;right:14px;bottom:16px;display:flex;gap:10px}
-.btn{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:10px 14px;font-size:1rem}
-.small{font-size:0.95rem}
+a{color:var(--accent)}
+.controls{position:fixed;right:12px;bottom:14px;display:flex;flex-direction:column;gap:8px;z-index:60}
+.ctrl-btn{background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-weight:800;min-width:44px;text-align:center}
+.ctrl-btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:70}
+.overlay.show{display:block}
+.panel{position:absolute;right:0;top:0;height:100%;width:85vw;max-width:420px;background:var(--bg);
+  border-left:1px solid var(--line);padding:12px;overflow:auto}
+.panel h3{margin-top:6px}
+.panel a{display:block;padding:10px 8px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--fg)}
+.panel .close{position:sticky;top:0;background:var(--bg);padding:8px 0;margin-bottom:6px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.small{font-size:.95rem}
 </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="brand">Japan Itinerary — 9–16 Oct 2025</div>
+    <div class="actions">
+      <button id="todayBtn" class="btn primary">Today</button>
+      <button id="menuBtn" class="btn">Menu</button>
+    </div>
+  </header>
+
   <div class="container">
-    <header>
-      <h1>Japan Itinerary — 9–16 Oct 2025</h1>
-      <div class="sub">Auto‑jumps to today (Tokyo time). Travel tables are reformatted for small screens. Descriptions and suggestions remain collapsible.</div>
-      <div class="nav">
-        <button id="todayBtn">Today</button>
-        <a href='#oct9'>Thu 9 Oct</a><a href='#oct10'>Fri 10 Oct</a><a href='#oct11'>Sat 11 Oct</a><a href='#oct12'>Sun 12 Oct</a><a href='#oct13'>Mon 13 Oct</a><a href='#oct14'>Tue 14 Oct</a><a href='#oct15'>Wed 15 Oct</a><a href='#oct16'>Thu 16 Oct</a>
-      </div>
-    </header>
     
 <section id="oct9" class="section day">
   <h2>Thu 9 Oct 2025 — Takayama (free day)</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Second night in Takayama. Explore historic Sanmachi-suji, morning markets and local sake breweries.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Second night in Takayama. Explore historic Sanmachi-suji, morning markets and local sake breweries.</div></div>
   <h3>Travel</h3>
   <div class='small' style='padding:8px'>No intercity travel today.</div>
   <h3>Description</h3>
@@ -80,9 +85,7 @@ a{color:var(--accent);}
 
 <section id="oct10" class="section day">
   <h2>Fri 10 Oct 2025 — Takayama → Shirakawa‑go → Kanazawa</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Morning bus to UNESCO‑listed Shirakawa‑go; continue to Kanazawa for gardens, geisha and samurai districts.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Morning bus to UNESCO‑listed Shirakawa‑go; continue to Kanazawa for gardens, geisha and samurai districts.</div></div>
   <h3>Travel</h3>
   <div class='table stackset'><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 10</span></td></tr><tr><th>Mode</th><td>🚌 Bus</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Takayama+Nohi+Bus+Center' target='_blank' rel='noopener'>Takayama Nohi Bus Center</a> → <a href='https://www.google.com/maps/search/?api=1&query=Shirakawa-go+Bus+Terminal' target='_blank' rel='noopener'>Shirakawa‑go (Ogimachi)</a></td></tr><tr><th>Service</th><td>Nohi Bus</td></tr><tr><th>Depart–Arrive</th><td>09:35 → 10:25</td></tr><tr><th>Seat</th><td>Non‑reserved</td></tr><tr><th>Notes</th><td>From Nohi Bus Center.</td></tr></table><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 11</span></td></tr><tr><th>Mode</th><td>🚌 Bus</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Shirakawa-go+Bus+Terminal' target='_blank' rel='noopener'>Shirakawa‑go</a> → <a href='https://www.google.com/maps/search/?api=1&query=Kanazawa+Station' target='_blank' rel='noopener'>Kanazawa Station</a></td></tr><tr><th>Service</th><td>Nohi / Hokutetsu</td></tr><tr><th>Depart–Arrive</th><td>13:50 → 15:05</td></tr><tr><th>Seat</th><td>Reserved</td></tr><tr><th>Notes</th><td>Keep until destination.</td></tr></table></div>
   <h3>Description</h3>
@@ -102,9 +105,7 @@ a{color:var(--accent);}
 
 <section id="oct11" class="section day">
   <h2>Sat 11 Oct 2025 — Kanazawa → Hiroshima (via Tsuruga & Kyoto)</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Bullet train via Tsuruga and Kyoto to Hiroshima, a city rebuilt with a message of peace.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Bullet train via Tsuruga and Kyoto to Hiroshima, a city rebuilt with a message of peace.</div></div>
   <h3>Travel</h3>
   <div class='table stackset'><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 12</span></td></tr><tr><th>Mode</th><td>🎫 JR Fare</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Kanazawa+Station' target='_blank' rel='noopener'>Kanazawa Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Hiroshima+Station' target='_blank' rel='noopener'>Hiroshima Station</a></td></tr><tr><th>Service</th><td>Base fare (covering below)</td></tr><tr><th>Depart–Arrive</th><td>—</td></tr><tr><th>Seat</th><td>—</td></tr><tr><th>Notes</th><td>Carry with you to final destination.</td></tr></table><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 13</span></td></tr><tr><th>Mode</th><td>🚄 Shinkansen</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Kanazawa+Station' target='_blank' rel='noopener'>Kanazawa Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Tsuruga+Station' target='_blank' rel='noopener'>Tsuruga Station</a></td></tr><tr><th>Service</th><td>Kagayaki #507</td></tr><tr><th>Depart–Arrive</th><td>11:54 → 12:43</td></tr><tr><th>Seat</th><td>Reserved</td></tr><tr><th>Notes</th><td>Use with ticket 12.</td></tr></table><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 13</span></td></tr><tr><th>Mode</th><td>🚆 Ltd. Express</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Tsuruga+Station' target='_blank' rel='noopener'>Tsuruga Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Kyoto+Station' target='_blank' rel='noopener'>Kyoto Station</a></td></tr><tr><th>Service</th><td>Thunderbird #22</td></tr><tr><th>Depart–Arrive</th><td>13:14 → 14:09</td></tr><tr><th>Seat</th><td>Reserved</td></tr><tr><th>Notes</th><td>Use with ticket 12.</td></tr></table><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 14</span></td></tr><tr><th>Mode</th><td>🚄 Shinkansen</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Kyoto+Station' target='_blank' rel='noopener'>Kyoto Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Hiroshima+Station' target='_blank' rel='noopener'>Hiroshima Station</a></td></tr><tr><th>Service</th><td>Nozomi #33</td></tr><tr><th>Depart–Arrive</th><td>14:46 → 16:27</td></tr><tr><th>Seat</th><td>Reserved</td></tr><tr><th>Notes</th><td>Use with ticket 12.</td></tr></table></div>
   <h3>Description</h3>
@@ -124,9 +125,7 @@ a{color:var(--accent);}
 
 <section id="oct12" class="section day">
   <h2>Sun 12 Oct 2025 — Hiroshima ⇄ Miyajima</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Day trip to Itsukushima Shrine’s ‘floating’ torii and Mt. Misen viewpoints; return to Hiroshima.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Day trip to Itsukushima Shrine’s ‘floating’ torii and Mt. Misen viewpoints; return to Hiroshima.</div></div>
   <h3>Travel</h3>
   <div class='table stackset'><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 15</span></td></tr><tr><th>Mode</th><td>🚆 JR</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Hiroshima+Station' target='_blank' rel='noopener'>Hiroshima Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Miyajimaguchi+Station' target='_blank' rel='noopener'>Miyajimaguchi Station</a></td></tr><tr><th>Service</th><td>JR Sanyō Line</td></tr><tr><th>Depart–Arrive</th><td>≈30 min</td></tr><tr><th>Seat</th><td>—</td></tr><tr><th>Notes</th><td>Keep ticket until destination.</td></tr></table><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 16</span></td></tr><tr><th>Mode</th><td>🚋⛴ Pass</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Hiroshima+Tram+Kamiya-cho' target='_blank' rel='noopener'>Hiroshima trams</a> → <a href='https://www.google.com/maps/search/?api=1&query=Miyajimaguchi+Ferry+Terminal' target='_blank' rel='noopener'>Miyajima Ferry</a></td></tr><tr><th>Service</th><td>Hiroden 1‑Day Streetcar & Ferry</td></tr><tr><th>Depart–Arrive</th><td>All day</td></tr><tr><th>Seat</th><td>—</td></tr><tr><th>Notes</th><td>Unlimited trams & Matsudai ferry (not JR ferry).</td></tr></table><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 17</span></td></tr><tr><th>Mode</th><td>🚆 JR</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Miyajimaguchi+Station' target='_blank' rel='noopener'>Miyajimaguchi Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Hiroshima+Station' target='_blank' rel='noopener'>Hiroshima Station</a></td></tr><tr><th>Service</th><td>JR Sanyō Line</td></tr><tr><th>Depart–Arrive</th><td>≈30 min</td></tr><tr><th>Seat</th><td>—</td></tr><tr><th>Notes</th><td>Keep ticket until destination.</td></tr></table></div>
   <h3>Description</h3>
@@ -146,9 +145,7 @@ a{color:var(--accent);}
 
 <section id="oct13" class="section day">
   <h2>Mon 13 Oct 2025 — Hiroshima → Kyoto</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Shinkansen to Japan’s former imperial capital; afternoon to orient and explore.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Shinkansen to Japan’s former imperial capital; afternoon to orient and explore.</div></div>
   <h3>Travel</h3>
   <div class='table stackset'><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 18</span></td></tr><tr><th>Mode</th><td>🚄 Shinkansen</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Hiroshima+Station' target='_blank' rel='noopener'>Hiroshima Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Kyoto+Station' target='_blank' rel='noopener'>Kyoto Station</a></td></tr><tr><th>Service</th><td>Nozomi #90</td></tr><tr><th>Depart–Arrive</th><td>10:03 → 11:43</td></tr><tr><th>Seat</th><td>Reserved</td></tr><tr><th>Notes</th><td>Keep ticket until destination.</td></tr></table></div>
   <h3>Description</h3>
@@ -168,9 +165,7 @@ a{color:var(--accent);}
 
 <section id="oct14" class="section day">
   <h2>Tue 14 Oct 2025 — Kyoto ⇄ Nara</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Day trip to Japan’s first permanent capital; deer roam among monumental temples.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Day trip to Japan’s first permanent capital; deer roam among monumental temples.</div></div>
   <h3>Travel</h3>
   <div class='table stackset'><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 19</span></td></tr><tr><th>Mode</th><td>🚆 JR</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Kyoto+Station' target='_blank' rel='noopener'>Kyoto Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Nara+Station' target='_blank' rel='noopener'>Nara Station</a></td></tr><tr><th>Service</th><td>JR Nara Line (suggested)</td></tr><tr><th>Depart–Arrive</th><td>10:07 → 10:51</td></tr><tr><th>Seat</th><td>—</td></tr><tr><th>Notes</th><td>Use any suitable service.</td></tr></table><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 20</span></td></tr><tr><th>Mode</th><td>🚆 JR</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Nara+Station' target='_blank' rel='noopener'>Nara Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Kyoto+Station' target='_blank' rel='noopener'>Kyoto Station</a></td></tr><tr><th>Service</th><td>JR Nara Line (suggested)</td></tr><tr><th>Depart–Arrive</th><td>17:07 → 17:51</td></tr><tr><th>Seat</th><td>—</td></tr><tr><th>Notes</th><td>Use any suitable service.</td></tr></table></div>
   <h3>Description</h3>
@@ -190,9 +185,7 @@ a{color:var(--accent);}
 
 <section id="oct15" class="section day">
   <h2>Wed 15 Oct 2025 — Kyoto (guided morning)</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Guided morning: Sanjūsangendō, Tōfuku‑ji, Fushimi Inari; afternoon free for Arashiyama or river strolls.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Guided morning: Sanjūsangendō, Tōfuku‑ji, Fushimi Inari; afternoon free for Arashiyama or river strolls.</div></div>
   <h3>Travel</h3>
   <div class='table stackset'><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 21</span></td></tr><tr><th>Mode</th><td>🚶‍♂️🚆 Voucher</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=McDonald%27s+Shichijo+Keihan+Kyoto' target='_blank' rel='noopener'>Kyoto City (meeting point)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Kyoto+City+Hall+area' target='_blank' rel='noopener'>Various sites</a></td></tr><tr><th>Service</th><td>Walking/rail tour</td></tr><tr><th>Depart–Arrive</th><td>Meet 08:45</td></tr><tr><th>Seat</th><td>—</td></tr><tr><th>Notes</th><td>Present voucher at meeting point.</td></tr></table></div>
   <h3>Description</h3>
@@ -212,9 +205,7 @@ a{color:var(--accent);}
 
 <section id="oct16" class="section day">
   <h2>Thu 16 Oct 2025 — Kyoto → Kansai Airport (departure)</h2>
-  <div class="kv">
-    <div class="k">Overview</div><div>Limited Express HARUKA to Kansai International Airport. Allow generous time for check‑in.</div>
-  </div>
+  <div class="kv"><div>Overview</div><div>Limited Express HARUKA to Kansai International Airport. Allow generous time for check‑in.</div></div>
   <h3>Travel</h3>
   <div class='table stackset'><table class='mini'><tr><th>Ticket</th><td><span class='badge'>Ticket 22</span></td></tr><tr><th>Mode</th><td>🚆 Ltd. Express</td></tr><tr><th>Route</th><td><a href='https://www.google.com/maps/search/?api=1&query=Kyoto+Station' target='_blank' rel='noopener'>Kyoto Station</a> → <a href='https://www.google.com/maps/search/?api=1&query=Kansai+Airport+Station' target='_blank' rel='noopener'>Kansai Airport Station</a></td></tr><tr><th>Service</th><td>Haruka #25</td></tr><tr><th>Depart–Arrive</th><td>12:00 → 13:20</td></tr><tr><th>Seat</th><td>Reserved</td></tr><tr><th>Notes</th><td>Keep ticket until destination.</td></tr></table></div>
   <h3>Description</h3>
@@ -231,32 +222,77 @@ a{color:var(--accent);}
   </details>
 </section>
 
-    <footer class="section" style="margin-bottom:60px">
-      Prices and hours are indicative and may change. Wikipedia links are provided for deeper reading.
+    <footer class="section" style="margin-bottom:80px">
+      Prices and hours are indicative and may change. Wikipedia links are provided for deeper reading. Font size preference is saved on this device.
     </footer>
   </div>
-  <div class="controls"><a class="btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</a></div>
+
+  <div class="controls">
+    <button id="fsPlus" class="ctrl-btn">A+</button>
+    <button id="fsMinus" class="ctrl-btn">A−</button>
+    <button id="toTop" class="ctrl-btn primary">Top</button>
+  </div>
+
+  <div class="overlay" id="menuOverlay">
+    <div class="panel" id="menuPanel">
+      <div class="close">
+        <strong>Jump to a day</strong>
+        <button id="closeMenu" class="btn">Close</button>
+      </div>
+      <a href='#oct9'>Thu 9 Oct 2025 — Takayama (free day)</a>
+<a href='#oct10'>Fri 10 Oct 2025 — Takayama → Shirakawa‑go → Kanazawa</a>
+<a href='#oct11'>Sat 11 Oct 2025 — Kanazawa → Hiroshima (via Tsuruga & Kyoto)</a>
+<a href='#oct12'>Sun 12 Oct 2025 — Hiroshima ⇄ Miyajima</a>
+<a href='#oct13'>Mon 13 Oct 2025 — Hiroshima → Kyoto</a>
+<a href='#oct14'>Tue 14 Oct 2025 — Kyoto ⇄ Nara</a>
+<a href='#oct15'>Wed 15 Oct 2025 — Kyoto (guided morning)</a>
+<a href='#oct16'>Thu 16 Oct 2025 — Kyoto → Kansai Airport (departure)</a>
+      <div style="padding:10px 8px" class="small">Tip: Use the <strong>Today</strong> button in the top bar to jump to the current date (Tokyo time).</div>
+    </div>
+  </div>
+
 <script>
-(function(){
-  const TRIP_YEAR=2025, TRIP_MONTH=10;
-  const days=[9,10,11,12,13,14,15,16];
-  function tokyoToday(){
-    const d=new Date();
-    const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'})
-      .formatToParts(d).reduce((a,x)=>{a[x.type]=x.value;return a;},{});
-    return {y:+p.year,m:+p.month,d:+p.day};
-  }
-  function jumpTo(dn){
-    const el=document.getElementById('oct'+dn);
-    if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); }
-  }
+const $ = (s,root=document)=>root.querySelector(s);
+const $$ = (s,root=document)=>Array.from(root.querySelectorAll(s));
+(function(){ // font size persistence
+  const KEY='itinerary_fs'; const MIN=15, MAX=22, DEFAULT=17;
+  function setFS(px){ const v=Math.max(MIN,Math.min(MAX,px)); document.documentElement.style.setProperty('--fs', v+'px'); try{localStorage.setItem(KEY,String(v));}catch{} }
+  function getFS(){ const v=Number(localStorage.getItem(KEY)); return isNaN(v)?DEFAULT:v; }
+  window.ItinFS={ set:setFS, get:getFS, inc(){setFS(getFS()+1)}, dec(){setFS(getFS()-1)} };
+  setFS(getFS());
+})();
+(function(){ // jump to today (Tokyo)
+  const ids = ['oct9','oct10','oct11','oct12','oct13','oct14','oct15','oct16'];
+  const now=new Date(); const tokyo=new Date(now.toLocaleString('en-GB',{timeZone:'Asia/Tokyo'}));
+  const y=tokyo.getFullYear(), m=tokyo.getMonth()+1, d=tokyo.getDate();
+  const id = (y===2025 && m===10 && d>=9 && d<=16) ? 'oct'+d : 'oct9';
+  function jump(){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
   window.addEventListener('DOMContentLoaded',()=>{
-    const t=tokyoToday();
-    let target=days[0];
-    if(t.y===TRIP_YEAR && t.m===TRIP_MONTH && days.includes(t.d)) target=t.d;
-    setTimeout(()=>jumpTo(target),150);
-    document.getElementById('todayBtn')?.addEventListener('click',()=>jumpTo(target));
+    setTimeout(jump,150);
+    $('#todayBtn')?.addEventListener('click',jump);
   });
+})();
+(function(){ // autohide topbar
+  const bar=$('.topbar'); if(!bar) return;
+  let last=window.scrollY;
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY; if(Math.abs(y-last)<8) return;
+    if(y>last) bar.classList.add('hide'); else bar.classList.remove('hide');
+    last=y;
+  },{passive:true});
+})();
+(function(){ // overlay menu
+  const overlay=$('#menuOverlay'), panel=$('#menuPanel'), openBtn=$('#menuBtn'), closeBtn=$('#closeMenu');
+  function open(){ overlay.classList.add('show'); }
+  function close(){ overlay.classList.remove('show'); }
+  openBtn?.addEventListener('click',open);
+  closeBtn?.addEventListener('click',close);
+  overlay?.addEventListener('click',(e)=>{ if(e.target===overlay) close(); });
+})();
+(function(){ // floating controls
+  $('#fsPlus')?.addEventListener('click',()=>window.ItinFS.inc());
+  $('#fsMinus')?.addEventListener('click',()=>window.ItinFS.dec());
+  $('#toTop')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 })();
 </script>
 </body>
